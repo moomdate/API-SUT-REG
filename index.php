@@ -42,6 +42,8 @@
   	}
 	//console.log(tempDate); //26 42 --19 record 22
 </script>
+
+/* get รหัสวิชาจากหน้าคนหาตารางเรียน
 var header = Array();
 var jsonData = {};
 $("html body table tbody tr td table tbody tr td font a").each(function(i, v){
@@ -58,5 +60,5 @@ jsonData[courseCode]=courseId;
 //console.log(courseId + " : " + courseCode); 
 }
 console.log(jsonData);
-
+*/
 
