@@ -1,4 +1,4 @@
-<div style=" display: none">
+<div>
 	<?php
 	$data___ =  $_GET['id'];
 	$url__ = "http://www.reg.sut.ac.th/registrar/class_info_2.asp?backto=home&option=0&acadyear=2560&semester=1&courseid=";
@@ -7,6 +7,11 @@
 	$translation = file_get_contents($url__);
 	$data = iconv('TIS-620','UTF-8', $translation);
 	print $data;
+//	$array_Test = array("a"=>"red");
+	//array_push($array_push,"surasak");
+	$a=array();
+	array_push($a,array("c"=>"red"));
+	//print_r($a);
 /*unction file_get_contents_utf8($fn) {
      $content = file_get_contents($fn);
       return mb_convert_encoding($content, 'UTF-8',
@@ -42,7 +47,7 @@
   	}
 	//console.log(tempDate); //26 42 --19 record 22
 </script>
-
+<?php
 /* get รหัสวิชาจากหน้าคนหาตารางเรียน
 var header = Array();
 var jsonData = {};
@@ -61,4 +66,4 @@ jsonData[courseCode]=courseId;
 }
 console.log(jsonData);
 */
-
+?>
