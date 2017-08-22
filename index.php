@@ -1,69 +1,106 @@
-<div>
-	<?php
-	$data___ =  $_GET['id'];
-	$url__ = "http://www.reg.sut.ac.th/registrar/class_info_2.asp?backto=home&option=0&acadyear=2560&semester=1&courseid=";
-	$url__ .=$data___;
-	echo $url__;
-	$translation = file_get_contents($url__);
-	$data = iconv('TIS-620','UTF-8', $translation);
-	print $data;
-//	$array_Test = array("a"=>"red");
-	//array_push($array_push,"surasak");
-	$a=array();
-	array_push($a,array("c"=>"red"));
-	//print_r($a);
-/*unction file_get_contents_utf8($fn) {
-     $content = file_get_contents($fn);
-      return mb_convert_encoding($content, 'UTF-8',
-          mb_detect_encoding($content, 'UTF-8, ISO-8859-1', true));
-      }*/
-      ?>
-  </div>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-  <script type="text/javascript">
-  	var header = Array();
-  	var Date_ = ["อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์"];
-  	$("html body table tbody tr td table tbody tr td font").each(function(i, v){
-  		header[i] = $(this).text();
-  	})
-  	var tempDate;
-  	var group;
-  	//console.log(header[29]);
-  	for(var i = 0; i < header.length;i++){
-  		tempDate = header[i];
+<div id="remove">
+  <div id="data" style="display:none">
+    <?php
 
-  		if(Date_.indexOf(tempDate)>-1){
-  			group = header[i-2].replace(/\s/g, "") ;
-  			//console.log(isNormalInteger(group));
-  			if(isNormalInteger(group)){
-  				console.log(header[i-2]);
-  			}
-  			console.log(" :"+ tempDate + ":"+header[i+1]);
-  			
-  		}
-  	}
-  	function isNormalInteger(str) {
-  		return /^\+?\d+$/.test(str);
-  	}
-	//console.log(tempDate); //26 42 --19 record 22
+    $data___ =  $_GET['id'];
+    $url__ = "http://www.reg.sut.ac.th/registrar/class_info_2.asp?backto=home&option=0&acadyear=2560&semester=1&courseid=";
+    $url__ .=$data___;
+    echo $url__;
+    $translation = file_get_contents($url__);
+    $data = iconv('TIS-620','UTF-8', $translation);
+    $title = "API";
+
+    //header('Content-Type: application/json');
+    $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $data);
+
+    print $buffer;
+
+  ?>
+</div>
+<title>
+  xx
+</title>
+<div id="jsonShow">
+</div>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript">
 </script>
-<?php
-/* get รหัสวิชาจากหน้าคนหาตารางเรียน
-var header = Array();
-var jsonData = {};
-$("html body table tbody tr td table tbody tr td font a").each(function(i, v){
-header[i] = $(this).attr("href");
-})
-for(var i = 0; i < header.length; i++){
-var data =  header[i];
-var courseId = data.split("=")[3].split("&")[0]
-var courseCode= data.split("=")[4].split("&")[0];
-//var courseId = data.split("a");
-if(courseCode.length>3){
-jsonData[courseCode]=courseId;
+<script type="text/javascript">
+  var header = Array();
+  var Date_ = ["อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์"];
+  $("html body table tbody tr td table tbody tr td font").each(function(i, v){
+    header[i] = $(this).text();
+  })
+  var tempDate;
+  var group;
+  var newGroup;
+  var JsonFromReg ={};
+  var groupsNumber ={};
+  var group_array;
+  var timeCount=0;
+   var arrayLetters = {};
+
+    document.getElementById("jsonShow").innerHTML = "";
+    var arrayCout = 0;
+    for(var i = 0; i < header.length;i++){
+      tempDate = header[i];
+      if(Date_.indexOf(tempDate)>-1){
+       group = header[i-2].replace(/\s/g, "") ;
+
+        if(isNormalInteger(group)){
+          newGroup = 1;
+
+         var data = [];
+         JsonFromReg[group] ;
+         arrayCout = 0;
+           timeCount=0;
+           console.log(arrayLetters);
+            JsonFromReg[group_array] = arrayLetters;
+           arrayLetters=[];
+        //  console.log(header[i-2]);
+      }
+       if(newGroup==1){ //if new groups
+           group_array =group;
+        
+
+        } 
+       document.getElementById("jsonShow").innerHTML +="+++"+group_array +"+++";
+
+       console.log(" :"+ tempDate + ":"+header[i+1]);
+
+      console.log(timeCount + " " +group_array);
+       arrayLetters[timeCount] = [tempDate,header[i+1] ];
+       timeCount++;
+
+      data.push(tempDate);
+
+
+         data.push(header[i+1] );
+       
+        arrayCout++;
+
+        newGroup=0;
+      }
+       console.log ("OK"); 
+
+
+  } //end loop
+   JsonFromReg[group_array] = arrayLetters; //ได้กลุ่มสุดท้าย
+   console.log(arrayLetters); //ได้กลุ่มสุดท้าย
+
+
+ function isNormalInteger(str) {
+  return /^\+?\d+$/.test(str);
 }
-//console.log(courseId + " : " + courseCode); 
-}
-console.log(jsonData);
-*/
-?>
+
+
+    delete JsonFromReg['undefined'];
+
+</script>
+</div>
+<body style=" white-space: pre; font-family: monospace; ">
+  <script type="text/javascript">
+    document.body.innerHTML = "";
+document.body.appendChild(document.createTextNode(JSON.stringify(JsonFromReg, null, 4)));
+  </script>
+  
+</body>
