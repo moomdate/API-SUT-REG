@@ -10,12 +10,12 @@ can use
 	$room
 */
 
-	include('simple_html_dom.php'); 	
-	$Date_ = ["อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์"];
+	include "Lib/simple_html_dom.php"; 	
+	$Date_ = array("อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์");
 
 	if(isset($_GET['id'])){
 		$id = $_GET['id'];
-		$string = file_get_contents("courseid.json");
+		$string = file_get_contents("Data/courseid.json");
 		$json_a = json_decode($string, true);
 		$keyid = ($json_a['courseid'][$id]);
 		$url = "http://www.reg.sut.ac.th/registrar/class_info_2.asp?backto=home&option=0&acadyear=2560&semester=1&courseid=".$keyid;
@@ -96,7 +96,7 @@ $data3 =  explode("&nbsp;&nbsp;",$data); //&nbsp;
 
 //echo json_encode($data3);
 $counter = 1;
-$Myjson=[];
+$Myjson=array();
 $befor = 0;
 $change = false;
 $countTime = 1;
