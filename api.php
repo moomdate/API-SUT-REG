@@ -295,7 +295,7 @@ foreach ($data3  as $key => $value) {
 // extract text from HTML
 //echo $html->plaintext;
 }else{
-	echo "not set id";
+//	echo "not set id";
 }
 $myArray['Groups'] = $groups;
 echo json_encode($myArray);
