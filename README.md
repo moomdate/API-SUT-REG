@@ -21,14 +21,12 @@
     - คือ php dom (Document Object Model) แต่เป็นไลบรารี่ที่มีคนพัฒนาไว้แย้ว
         - ใช้สำหรับดึง content หน้า reg เป็น html แล้ว.....
     - Github [![N|Solid](https://github.com/favicon.ico)](https://github.com/sunra/php-simple-html-dom-parser)
-
-``` php
-<?php
-    echo "สวัสดีคร่า"; 
-?>
-```
 ------
+
 ## [ตัวอย่าง](https://still-mountain-63520.herokuapp.com/api.php?id=110206)
+``` 
+การดึงรายระเอียดวิชา /api.php?id=xxxxx
+```
 # ![Demo](https://www.picz.in.th/images/2017/09/28/Capture16a1472e21233147.png)  https://www.picz.in.th/images/2017/09/28/Capture16a1472e21233147.png
 ***
 ### [Facebook](https://fb.com/moomdate) --Moomdate--
