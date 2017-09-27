@@ -1,6 +1,6 @@
 # API ระบบ REG SUT
 
-[![N|Solid](https://www.picz.in.th/images/2017/09/28/532742-128.png)](dsd)
+[![N|Solid](https://www.picz.in.th/images/2017/09/28/532742-128.png =200px)](dsd)
 
 API นี้สร้างขึ้นเพื่อใช้ดึงข้อมูลตารางเรียน เพื่อใช้ในวิชา # 523495 COMPUTER ENGINEERING PROJECT I สำหรับใช้ในระบบจัดตารางเรียน.
 ***
