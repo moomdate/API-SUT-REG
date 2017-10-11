@@ -9,6 +9,8 @@ can use
 	$Bulding
 	$room
 */
+	header("Access-Control-Allow-Origin: *");
+
 
 	include "Lib/simple_html_dom.php"; 	
 	$Date_ = array("อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์");
@@ -18,7 +20,7 @@ can use
 		$string = file_get_contents("Data/courseid.json");
 		$json_a = json_decode($string, true);
 		$keyid = ($json_a['courseid'][$id]);
-		$url = "http://www.reg.sut.ac.th/registrar/class_info_2.asp?backto=home&option=0&acadyear=2560&semester=1&courseid=".$keyid;
+		$url = "http://reg5.sut.ac.th/registrar/class_info_2.asp?backto=home&option=0&acadyear=2560&semester=1&courseid=".$keyid;
 		$html = file_get_html($url);
 		$myArray = array();
 		$groups = array();
