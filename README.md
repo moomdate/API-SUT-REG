@@ -25,8 +25,9 @@
 
 ## [ตัวอย่าง](https://still-mountain-63520.herokuapp.com/api.php?id=110206)
 ``` 
-การดึงรายระเอียดวิชา /api/id
-id คือ `หมายเลขวิชา` 
+การดึงรายระเอียดวิชา /$A/api/$B
+$A หมายถึง เซิฟเวอร์ระบบซึ่งมี 1-5
+$B หมายถึงรหัสวิชา
 ```
 # ![Demo](https://www.picz.in.th/images/2017/09/28/Capture16a1472e21233147.png)  https://still-mountain-63520.herokuapp.com/api.php?id=110206
 ***
