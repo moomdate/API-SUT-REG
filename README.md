@@ -25,7 +25,8 @@
 
 ## [ตัวอย่าง](https://still-mountain-63520.herokuapp.com/api.php?id=110206)
 ``` 
-การดึงรายระเอียดวิชา /api.php?id=xxxxx
+การดึงรายระเอียดวิชา /api/id
+id คือ `หมายเลขวิชา` 
 ```
 # ![Demo](https://www.picz.in.th/images/2017/09/28/Capture16a1472e21233147.png)  https://still-mountain-63520.herokuapp.com/api.php?id=110206
 ***
