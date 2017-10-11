@@ -14,13 +14,21 @@ can use
 
 	include "Lib/simple_html_dom.php"; 	
 	$Date_ = array("อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์");
-
+	if(isset($_GET['serve'])){
+		if($_GET['serve']>5)
+			$serve = "";
+		else
+			$serve = $_GET['serve'];
+	}
+	else{
+		$serve = "";
+	}
 	if(isset($_GET['id'])){
 		$id = $_GET['id'];
 		$string = file_get_contents("Data/courseid.json");
 		$json_a = json_decode($string, true);
 		$keyid = ($json_a['courseid'][$id]);
-		$url = "http://reg5.sut.ac.th/registrar/class_info_2.asp?backto=home&option=0&acadyear=2560&semester=1&courseid=".$keyid;
+		$url = "http://reg".$serve.".sut.ac.th/registrar/class_info_2.asp?backto=home&option=0&acadyear=2560&semester=1&courseid=".$keyid;
 		$html = file_get_html($url);
 		$myArray = array();
 		$groups = array();
@@ -301,5 +309,5 @@ foreach ($data3  as $key => $value) {
 }
 $myArray['Groups'] = $groups;
 echo json_encode($myArray);
-
+//echo $serve;
 ?>
