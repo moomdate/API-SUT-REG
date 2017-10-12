@@ -15,7 +15,7 @@ can use
 	include "Lib/simple_html_dom.php"; 	
 	$Date_ = array("อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์");
 	if(isset($_GET['serve'])){
-		if($_GET['serve']>5)
+		if($_GET['serve']>6)
 			$serve = "";
 		else
 			$serve = $_GET['serve'];
