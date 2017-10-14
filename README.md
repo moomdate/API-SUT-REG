@@ -35,6 +35,6 @@ $B หมายถึงเลขเซิฟเวอร์ เป็นได�
 =======
 
 ```
-# ![Demo](https://www.picz.in.th/images/2017/09/28/Capture16a1472e21233147.png)  https://still-mountain-63520.herokuapp.com/2/api/535203/
+# ![Demo](https://www.picz.in.th/images/2017/09/28/Capture16a1472e21233147.png)  https://still-mountain-63520.herokuapp.com/api.php?id=535203&serve=6
 ***
 ### [Facebook](https://fb.com/moomdate) --Moomdate--
