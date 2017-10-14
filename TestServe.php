@@ -8,9 +8,7 @@ foreach ($url  as $key => $value) {
 		$info = curl_getinfo($ch);
 		echo 'Took ' . $info['total_time'] . ' seconds to transfer a request to ' . $info['url'].'<br>';
 	}
-	
+
 	curl_close($ch);
 }
-
-
 ?>
