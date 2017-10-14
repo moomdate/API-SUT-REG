@@ -25,12 +25,19 @@
 
 ## [ตัวอย่าง](https://still-mountain-63520.herokuapp.com/api.php?id=110206)
 ``` 
+<<<<<<< HEAD
 การดึงรายระเอียดวิชา /api.php?id=$A
 $A หมายถึงรหัสวิชา
 เซิฟเวอร์ REG
 &serve=$B
 $B หมายถึงเลขเซิฟเวอร์ เป็นได้ตั้งแต่ 1-6
 #/api.php?id=20300&serve=2
+=======
+การดึงรายระเอียดวิชา /$A/api/$B
+$A หมายถึง เซิฟเวอร์ระบบซึ่งมี 1-6 (เซิฟ 1 ไม่ลงท้ายด้วยเลย 1)
+
+$B หมายถึงรหัสวิชา
+>>>>>>> 43b6cda1b5bff5953b7c8d17a7ea41b66eeab263
 ```
 # ![Demo](https://www.picz.in.th/images/2017/09/28/Capture16a1472e21233147.png)  https://still-mountain-63520.herokuapp.com/2/api/535203/
 ***
