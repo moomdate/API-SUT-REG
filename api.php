@@ -28,7 +28,18 @@ can use
 		$string = file_get_contents("Data/courseid.json");
 		$json_a = json_decode($string, true);
 		$keyid = ($json_a['courseid'][$id]);
-		$url = "http://reg".$serve.".sut.ac.th/registrar/class_info_2.asp?backto=home&option=0&acadyear=2560&semester=1&courseid=".$keyid;
+		if(isset($_GET['acadyear']))
+			$acadyear = $_GET['acadyear'];
+		else
+			$acadyear = '2560';
+
+		if(isset($_GET['semester']))
+			$semester = $_GET['semester'];
+		else
+			$semester = '1';
+
+
+		$url = "http://reg".$serve.".sut.ac.th/registrar/class_info_2.asp?backto=home&option=0&acadyear=".$acadyear."&semester=".$semester."&courseid=".$keyid;
 		$html = file_get_html($url);
 		$myArray = array();
 		$groups = array();
@@ -201,7 +212,7 @@ foreach ($data3  as $key => $value) {
 				//echo "อาคาร:"; //bug
 				//echo $howlon2;
 				$Bulding = substr($detalNonesub,$howlon,(strlen($detalNonesub)-($howlon+1)));
-				$dataIngroups[$countTime]['Bulding']  =$Bulding; // add Bulding to array
+				$dataIngroups[$countTime]['Building']  =$Bulding; // add Bulding to array
 				 $Bulding;
 
 				//echo $howlon;
