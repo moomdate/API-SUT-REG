@@ -1,6 +1,6 @@
 # API ระบบ REG SUT
+![alt text](https://www.picz.in.th/images/2017/09/28/532742-128.png "Logo Title Text 1")
 
-[![N|Solid](https://www.picz.in.th/images/2017/09/28/532742-128.png)](dsd)
 ------
 ##### - สิ่งที่ใช้ได้
   - ดึงข้อมูลโดยรหัสวิชา
