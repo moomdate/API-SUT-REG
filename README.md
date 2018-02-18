@@ -25,10 +25,10 @@
 
 ## [ตัวอย่าง](https://still-mountain-63520.herokuapp.com/api.php?id=110206)
 ``` 
-การดึงรายระเอียดวิชา /$A/api/$B
+การดึงรายระเอียดวิชา ?id=รหัสวิชา&acadyear=ปีการศึกษา&semester=ภาคการศึกษา
 $A หมายถึง เซิฟเวอร์ระบบซึ่งมี 1-5
 $B หมายถึงรหัสวิชา
 ```
-# ![Demo](https://www.picz.in.th/images/2017/09/28/Capture16a1472e21233147.png)  https://still-mountain-63520.herokuapp.com/2/api/535203/
+# ![Demo](https://www.picz.in.th/images/2017/09/28/Capture16a1472e21233147.png)  https://still-mountain-63520.herokuapp.com/api.php?id=523101&acadyear=2560&semester=3
 ***
 ### [Facebook](https://fb.com/moomdate) --Moomdate--
