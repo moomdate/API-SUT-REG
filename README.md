@@ -44,7 +44,7 @@ Example: ` www.snailbot.xyz/get/532101/2560/3`
 `/insert/รหัสวิชา/ปีที่รายวิชานั้นเปิดสอน`
 
 Example: ` www.snailbot.xyz/insert/532101/2560`
-
+Example: `https://snailbot.xyz/mn.php?id=523101&y=2560`
 ##### กรณีเพิ่มข้อมูลสำเร็จ 
 ```json
 {
