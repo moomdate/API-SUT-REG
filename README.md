@@ -22,12 +22,47 @@
         - ใช้สำหรับดึง content หน้า reg เป็น html แล้ว.....
     - Github [![N|Solid](https://github.com/favicon.ico)](https://github.com/sunra/php-simple-html-dom-parser)
 ------
+## How to use
 
-## [ตัวอย่าง](https://snailbot.xyz/api.php?id=110206)
-``` 
-การดึงรายระเอียดวิชา ?id=รหัสวิชา&acadyear=ปีการศึกษา&semester=ภาคการศึกษา
+#### การดึงข้อมูล
+- แบบเต็ม
+    - การดึงรายระเอียดวิชา `?id=รหัสวิชา&acadyear=ปีการศึกษา&semester=ภาคการศึกษา`
+Example: ` www.snailbot.xyz/api.php?id=523101&acadyear=2560&semester=3`
 
+- แบบย่อ
 ```
-# ![Demo](https://www.picz.in.th/images/2017/09/28/Capture16a1472e21233147.png)  https://snailbot.xyz/api.php?id=523101&acadyear=2560&semester=3
-***
+ /get/#a/#b/#c
+ #a = รหัสวิชา
+ #b = ปีการศึกษา
+ #c = เทอม
+```
+Example: ` www.snailbot.xyz/get/532101/2560/3`
+
+------
+## กรณีไม่พบรายวิชา
+กรณีที่ไม่พบรายวิชาอาจเกิดจากไฟล์ json ที่เก็บรหัสรายวิชาไม่ได้มีการอัปเดท หรือไม่มีการรหัสวิชาให้ทำการ Insert รหัสวิชา ดังตัวอย่างต่อไปนี้
+`/insert/รหัสวิชา/ปีที่รายวิชานั้นเปิดสอน`
+
+Example: ` www.snailbot.xyz/insert/532101/2560`
+
+##### กรณีเพิ่มข้อมูลสำเร็จ 
+```json
+{
+status	"success"
+code	1
+coursecode	"1003564"
+courseid	"523101"
+}
+```
+##### กรณีที่มีรหัสในไฟล์ json แล้ว
+```json
+{
+status	"has in table"
+code	2
+}
+```
+##### กรณีไม่พบไฟล์
+# ![](https://www.img.live/images/2018/09/24/d49cca06bc946712.png)  
+
+# ![link test](https://www.picz.in.thimages/2017/09/28/Capture16a1472e21233147.png)  https://snailbot.xyz/api.php?id=523101&acadyear=2560&semester=3
 ### [Facebook](https://fb.com/moomdate) --Moomdate--

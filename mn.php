@@ -1,7 +1,8 @@
 <?php
-//header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: *");
+header('Content-Type: application/json');
 set_error_handler('exceptions_error_handler');
-function findCourseID($id_, $semester_, $url_) {
+function findCourseID($id_, $semester_, $url_, $year_) {
 
 	$request = array(
 		'http' => array(
@@ -11,7 +12,7 @@ function findCourseID($id_, $semester_, $url_) {
 				'coursestatus' => 'O00',
 				'facultyid' => 'all',
 				'maxrow' => '50',
-				'acadyear' => '2561',
+				'acadyear' => $year_,
 				'semester' => $semester_,
 				'CAMPUSID' => '',
 				'LEVELID' => '',
@@ -23,7 +24,7 @@ function findCourseID($id_, $semester_, $url_) {
 	);
 
 	$context = stream_context_create($request);
-	//header('Content-Type: application/json');
+
 	$html = file_get_html($url_, false, $context);
 	$data2 = $html->find('font[size=2]', 0);
 	$fillter = explode('?', $data2);
@@ -51,19 +52,52 @@ function exceptions_error_handler($severity, $message, $filename, $lineno) {
 }
 include "jsonManageClass.php";
 include "Lib/simple_html_dom.php";
-$id = $_GET['id'];
+
+if (isset($_GET['id'])) {
+	$id = $_GET['id'];
+} else {
+	$id = '';
+}
+
+if (isset($_GET['y'])) {
+	$year = $_GET['y'];
+} else {
+	$year = '2560';
+}
+$arr = array(
+	'status' => '',
+	'code' => 0,
+);
 $baseURL = "https://reg4.sut.ac.th/registrar/class_info_1.asp?avs1045002924=2&backto=home";
 $jsonMN = new managejsonID("Data/courseid.json");
 if ($jsonMN->checkHashID($id)) {
-	echo "see";
+	$arr['status'] = 'has in table';
+	$arr['code'] = 2;
+
+	$myJSON = json_encode($arr);
+	echo $myJSON;
 } else {
 	for ($i = 1; $i <= 3; $i++) {
-		$data___ = findCourseID($id, $i, $baseURL);
+		$data___ = findCourseID($id, $i, $baseURL, $year);
 		if ($data___ != 0) {
 			$jsonMN->addTojsonFile($id, $data___);
-            echo "ok";
-            break;
+			$arr['status'] = 'success';
+			$arr['code'] = 1;
+			$arr['coursecode'] = $data___;
+			$arr['courseid'] = $id;
+			$myJSON = json_encode($arr);
+			$error = 0;
+			echo $myJSON;
+			break;
+		} else {
+			$error = 1;
 		}
+	}
+	if ($error == 1) {
+		$arr['status'] = 'not found course id';
+		$arr['code'] = 0;
+		$myJSON = json_encode($arr);
+		echo $myJSON;
 	}
 	//
 }

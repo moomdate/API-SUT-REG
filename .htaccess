@@ -1,0 +1,26 @@
+RewriteEngine On
+
+RewriteRule ^insert$ mn.php?id=0
+
+RewriteRule ^insert/([0-9]+)$ mn.php?id=$1
+RewriteRule ^insert/([0-9]+)/$ mn.php?id=$1
+
+RewriteRule ^insert/([0-9]+)/([0-9]+)$ mn.php?id=$1&y$2
+RewriteRule ^insert/([0-9]+)/([0-9]+)/$ mn.php?id=$1&y$2
+
+
+RewriteRule ^get/([0-9]+)$ api.php?id=$1
+RewriteRule ^get/([0-9]+)/$ api.php?id=$1
+
+RewriteRule ^get/([0-9]+)/([0-9]+)$ api.php?id=$1&acadyear=$2
+RewriteRule ^get/([0-9]+)/([0-9]+)/$ api.php?id=$1&acadyear=$2
+
+
+RewriteRule ^get/([0-9]+)/([0-9]+)/([1-3])$ api.php?id=$1&acadyear=$2&semester=$3
+RewriteRule ^get/([0-9]+)/([0-9]+)/([1-3])/$ api.php?id=$1&acadyear=$2&semester=$3
+
+RewriteRule ^Lib/$ index.php
+RewriteRule ^image/$ index.php
+RewriteRule ^Data/$ index.php
+
+ErrorDocument 404 /api/404.html
