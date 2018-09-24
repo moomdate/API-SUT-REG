@@ -48,16 +48,16 @@ Example: ` www.snailbot.xyz/insert/532101/2560`
 ##### กรณีเพิ่มข้อมูลสำเร็จ 
 ```json
 {
-status:"success"
-code:1
-coursecode:"1003564"
+status:"success",
+code:1,
+coursecode:"1003564",
 courseid:"523101"
 }
 ```
 ##### กรณีที่มีรหัสในไฟล์ json แล้ว
 ```json
 {
-status:"has in table"
+status:"has in table",
 code:2
 }
 ```
