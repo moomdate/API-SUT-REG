@@ -2,6 +2,10 @@
 ![alt text](https://www.picz.in.th/images/2017/09/28/532742-128.png "Logo Title Text 1")
 
 ------
+## Specification
+[English](README.en.md)
+
+------
 ##### - สิ่งที่ใช้ได้
   - ดึงข้อมูลโดยรหัสวิชา
     - ชื่อวิชา
