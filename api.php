@@ -1,4 +1,5 @@
 <?php
+
 /*
 can use
 $nuykit
@@ -10,7 +11,7 @@ $Bulding
 $room
  */
 header("Access-Control-Allow-Origin: *");
-
+header('Content-Type: application/json');
 include "Lib/simple_html_dom.php";
 $Date_ = array("อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์");
 if (isset($_GET['serve'])) {
@@ -108,7 +109,7 @@ echo $e->innertext . '<br>'ว
 	//$output = preg_replace( '/[^0-9]/', '', $data );
 	$parts = preg_split('/\s+/', $data); //
 	$data3 = explode("&nbsp;&nbsp;", $data); //&nbsp;
-	header('Content-Type: application/json');
+	
 //echo strpos($data,"02");
 	//echo "<pre>";
 	//print_r($data3);

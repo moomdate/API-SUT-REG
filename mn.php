@@ -1,4 +1,6 @@
 <?php
+include "jsonManageClass.php";
+include "Lib/simple_html_dom.php";
 header("Access-Control-Allow-Origin: *");
 header('Content-Type: application/json');
 set_error_handler('exceptions_error_handler');
@@ -50,8 +52,7 @@ function exceptions_error_handler($severity, $message, $filename, $lineno) {
 		throw new ErrorException($message, 0, $severity, $filename, $lineno);
 	}
 }
-include "jsonManageClass.php";
-include "Lib/simple_html_dom.php";
+
 
 if (isset($_GET['id'])) {
 	$id = $_GET['id'];
