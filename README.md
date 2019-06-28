@@ -40,14 +40,14 @@ Example: ` www.snailbot.xyz/api.php?id=523101&acadyear=2560&semester=3`
  #b = ปีการศึกษา
  #c = เทอม
 ```
-Example: ` www.snailbot.xyz/get/532101/2560/3`
+Example: ` www.snailbot.xyz/get/523101/2560/3`
 # ![link test](https://www.img.live/images/2018/09/24/sada.png)  
 ------
 ## กรณีไม่พบรายวิชา
 กรณีที่ไม่พบรายวิชาอาจเกิดจากไฟล์ json ที่เก็บรหัสรายวิชาไม่ได้มีการอัปเดท หรือไม่มีรหัสวิชาให้ทำการ Insert รหัสวิชา ดังตัวอย่างต่อไปนี้
 `/insert/รหัสวิชา/ปีที่รายวิชานั้นเปิดสอน`
 
-Example: ` www.snailbot.xyz/insert/532101/2560`
+Example: ` www.snailbot.xyz/insert/523101/2560`
 Example: `https://snailbot.xyz/mn.php?id=523101&y=2560`
 ##### กรณีเพิ่มข้อมูลสำเร็จ 
 ```json
