@@ -24,3 +24,7 @@ RewriteRule ^image/$ index.php
 RewriteRule ^Data/$ index.php
 
 ErrorDocument 404 /api/404.html
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
