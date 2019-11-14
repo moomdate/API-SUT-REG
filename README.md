@@ -47,8 +47,9 @@ Example: ` https://sut-schedule.tech/get/523101/2560/3`
 กรณีที่ไม่พบรายวิชาอาจเกิดจากไฟล์ json ที่เก็บรหัสรายวิชาไม่ได้มีการอัปเดท หรือไม่มีรหัสวิชาให้ทำการ Insert รหัสวิชา ดังตัวอย่างต่อไปนี้
 `/insert/รหัสวิชา/ปีที่รายวิชานั้นเปิดสอน`
 
-Example: ` https://sut-schedule.tech/insert/523101/2560`
-Example: `https://sut-schedule.tech/mn.php?id=523101&y=2560`
+#### Example: ` https://sut-schedule.tech/insert/523101/2560`
+---
+#### Example: `https://sut-schedule.tech/mn.php?id=523101&y=2560`
 ##### กรณีเพิ่มข้อมูลสำเร็จ 
 ```json
 {
